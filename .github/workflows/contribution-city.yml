@@ -1,0 +1,48 @@
+name: Contribution city
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        description: GitHub username to render
+        required: false
+        default: myfear
+        type: string
+  schedule:
+    - cron: '17 3 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: contribution-city-output
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - name: Check out action
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - name: Generate contribution city
+        id: city
+        uses: ./
+        with:
+          github-token: ${{ secrets.CONTRIBUTION_TOKEN || secrets.GITHUB_TOKEN }}
+          username: ${{ inputs.username || github.repository_owner }}
+          weeks: '53'
+          height: '14'
+          theme: github-dark
+      - name: Upload SVG
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: contribution-city
+          path: contribution-city.svg
+          if-no-files-found: error
+      - name: Publish changed SVG
+        shell: bash
+        env:
+          GIT_AUTHOR_NAME: Markus Eisele
+          GIT_AUTHOR_EMAIL: markus@eisele.net
+          GIT_COMMITTER_NAME: Markus Eisele
+          GIT_COMMITTER_EMAIL: markus@eisele.net
+        run: bash examples/publish-output.sh

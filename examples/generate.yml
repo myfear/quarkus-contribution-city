@@ -1,0 +1,29 @@
+name: contribution-city
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 3 * * *'
+permissions:
+  contents: read
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate contribution city
+        id: city
+        uses: myfear/quarkus-contribution-city@main
+        with:
+          github-token: ${{ secrets.CONTRIBUTION_TOKEN || secrets.GITHUB_TOKEN }}
+          username: ${{ github.repository_owner }}
+          weeks: '53'
+          height: '14'
+          theme: github-dark
+      - name: Show result
+        env:
+          SVG_PATH: ${{ steps.city.outputs.svg-path }}
+        run: ls -lh "$SVG_PATH"
+      - name: Downloadable SVG
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: contribution-city
+          path: contribution-city.svg

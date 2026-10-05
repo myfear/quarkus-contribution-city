@@ -1,0 +1,10 @@
+{
+  "data": {
+    "user": null
+  },
+  "errors": [
+    {
+      "message": "Could not resolve to a User with the login of 'missing-user'"
+    }
+  ]
+}

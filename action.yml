@@ -1,0 +1,48 @@
+name: Quarkus Contribution City
+description: Render a GitHub contribution calendar as a deterministic ASCII-style SVG city
+inputs:
+  github-token:
+    description: GitHub token for the contribution calendar
+    required: true
+  username:
+    description: GitHub username to render
+    required: true
+  weeks:
+    description: Number of recent weeks to render (4..53)
+    required: false
+    default: '53'
+  height:
+    description: Maximum building height (3..30)
+    required: false
+    default: '14'
+  theme:
+    description: SVG theme (github-dark or mono)
+    required: false
+    default: github-dark
+outputs:
+  svg-path:
+    description: Path to the generated SVG in the caller's workspace
+    value: ${{ steps.action.outputs.svg-path }}
+  total-contributions:
+    description: Total contributions in the full calendar returned by GitHub
+    value: ${{ steps.action.outputs.total-contributions }}
+runs:
+  using: composite
+  steps:
+    - name: Set up Java 21
+      uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+      with:
+        java-version: '21'
+        distribution: temurin
+    - name: Set up JBang
+      uses: jbangdev/setup-jbang@cc28889678db839e29433f42f9ff25f148b6d8de # main
+    - name: Build the selected action revision
+      shell: bash
+      run: '"$GITHUB_ACTION_PATH/mvnw" --batch-mode --no-transfer-progress -f "$GITHUB_ACTION_PATH/pom.xml" -Dmaven.test.skip=true package'
+    - name: Render the contribution city
+      id: action
+      shell: bash
+      run: 'jbang --java 21 "$GITHUB_ACTION_PATH/target/quarkus-contribution-city-1.0-SNAPSHOT.jar"'
+      env:
+        JSON_INPUTS: ${{ toJSON(inputs) }}
+        GITHUB_TOKEN: ${{ inputs.github-token }}
