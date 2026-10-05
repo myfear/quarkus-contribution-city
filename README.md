@@ -79,3 +79,9 @@ The [Release action workflow](https://github.com/myfear/quarkus-contribution-cit
 Release tags use `vMAJOR.MINOR.PATCH`, for example `v1.0.0`. Preview versions add a suffix such as `v1.1.0-beta.1`. Each full version tag stays on its original commit. Stable releases also maintain a major tag such as `v1`, which tracks the newest stable release in that major version. Prereleases keep their full version tag.
 
 The examples use `main` while the first release is being prepared. After a stable release is published, consumers can use its major tag for compatible updates or pin the full commit SHA for an exact revision.
+
+## License
+
+Copyright 2026 Markus Eisele.
+
+Licensed under the [Apache License, Version 2.0](LICENSE).

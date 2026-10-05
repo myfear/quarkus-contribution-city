@@ -46,7 +46,7 @@ The Maven project version (`1.0-SNAPSHOT`) names the internal build artifact. Gi
 
 The repository is public and contains the action metadata at its root. `action.yml` includes the action name, description, author, and icon. GitHub checks name availability in the Marketplace release form.
 
-After publishing the first release, open its release editor and select **Publish this Action to the GitHub Marketplace**. The repository owner must accept the GitHub Marketplace Developer Agreement if it is still pending, choose the listing categories, and resolve any metadata messages shown by GitHub. Confirm the project license with the owner before inviting external reuse; a license has not been selected for this repository yet.
+After publishing the first release, open its release editor and select **Publish this Action to the GitHub Marketplace**. The repository owner must accept the GitHub Marketplace Developer Agreement if it is still pending, choose the listing categories, and resolve any metadata messages shown by GitHub. The project is licensed under the [Apache License, Version 2.0](LICENSE).
 
 Follow [GitHub's Marketplace publishing instructions](https://docs.github.com/en/actions/how-tos/create-and-publish-actions/publish-in-github-marketplace) for the current UI. The release workflow publishes GitHub releases; Marketplace enrollment is completed in that form.
 
