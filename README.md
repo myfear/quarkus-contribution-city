@@ -35,7 +35,7 @@ Add this step to a GitHub workflow:
 ```yaml
 - name: Generate contribution city
   id: city
-  uses: myfear/quarkus-contribution-city@main
+  uses: myfear/quarkus-contribution-city@v1
   with:
     github-token: ${{ secrets.GITHUB_TOKEN }}
     username: ${{ github.repository_owner }}
@@ -44,7 +44,7 @@ Add this step to a GitHub workflow:
     theme: github-dark
 ```
 
-Pin a reviewed commit in place of `main` for regular use. The action builds that source revision and runs its packaged JAR with JBang.
+Pin a reviewed commit in place of `v1` for an exact revision. The action builds that source revision and runs its packaged JAR with JBang.
 
 - `username`: GitHub user to render. Use a user account rather than an organization.
 - `github-token`: Token used to read the calendar. Its permissions and the user's visibility settings determine the available contributions. See [GitHub's contribution schema](https://docs.github.com/en/graphql/reference/users#contributionscollection) for private and internal contribution access.
@@ -78,7 +78,7 @@ The [Release action workflow](https://github.com/myfear/quarkus-contribution-cit
 
 Release tags use `vMAJOR.MINOR.PATCH`, for example `v1.0.0`. Preview versions add a suffix such as `v1.1.0-beta.1`. Each full version tag stays on its original commit. Stable releases also maintain a major tag such as `v1`, which tracks the newest stable release in that major version. Prereleases keep their full version tag.
 
-The examples use `main` while the first release is being prepared. After a stable release is published, consumers can use its major tag for compatible updates or pin the full commit SHA for an exact revision.
+The examples use `v1` for compatible updates. [Version v1.0.0](https://github.com/myfear/quarkus-contribution-city/releases/tag/v1.0.0) is the first stable release. Pin `2fe22f7ed1d82f9dc1b4380c2b45769f1463a1d8` for that exact revision.
 
 ## License
 

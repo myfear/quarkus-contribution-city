@@ -50,6 +50,6 @@ After publishing the first release, open its release editor and select **Publish
 
 Follow [GitHub's Marketplace publishing instructions](https://docs.github.com/en/actions/how-tos/create-and-publish-actions/publish-in-github-marketplace) for the current UI. The release workflow publishes GitHub releases; Marketplace enrollment is completed in that form.
 
-After the first stable release, update the README and consumer examples to use `@v1` or the full release commit SHA. The daily generator in this repository continues using the checked-out local action so it exercises `main`.
+The README and consumer examples use `@v1`. Update them when a new stable major version is published. The daily generator in this repository continues using the checked-out local action so it exercises `main`.
 
 GitHub documents this combination of fixed version tags and moving major tags in [Managing custom actions](https://docs.github.com/en/actions/how-tos/create-and-publish-actions/manage-custom-actions).
