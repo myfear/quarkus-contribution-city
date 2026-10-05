@@ -6,9 +6,15 @@ Companion project for [The Main Thread](https://www.the-main-thread.com), where 
 
 [![CI build](https://github.com/myfear/quarkus-contribution-city/actions/workflows/ci.yml/badge.svg)](https://github.com/myfear/quarkus-contribution-city/actions/workflows/ci.yml)
 
-![Synthetic contribution city](images/contribution-city.svg)
+## Live example: @myfear
 
-The sample uses synthetic data. The visual idea is inspired by [Pink Pixel's skyline](https://github.com/pinkpixel-dev/skyline); this implementation is written independently in Java.
+This city uses [@myfear's real GitHub contribution data](https://github.com/myfear) and is displayed in the [myfear/myfear profile README](https://github.com/myfear/myfear#readme).
+
+[![Live GitHub contribution city for myfear](https://raw.githubusercontent.com/myfear/quarkus-contribution-city/output/contribution-city.svg)](https://github.com/myfear)
+
+The [Contribution city workflow](https://github.com/myfear/quarkus-contribution-city/actions/workflows/contribution-city.yml) runs in this repository, refreshes the image daily at 03:17 UTC, and saves it on the `output` branch. The profile README embeds that image through its URL.
+
+The visual idea is inspired by [Pink Pixel's skyline](https://github.com/pinkpixel-dev/skyline); this implementation is written independently in Java.
 
 ## Build and test
 
