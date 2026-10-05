@@ -1,0 +1,94 @@
+name: Release action
+run-name: Release ${{ inputs.version }} (dry run=${{ inputs.dry_run }})
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version tag, such as v1.0.0 or v1.1.0-beta.1'
+        required: true
+        type: string
+      dry_run:
+        description: 'Verify and show the release plan without publishing'
+        required: true
+        default: true
+        type: boolean
+permissions:
+  contents: read
+concurrency:
+  group: action-release
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Require main
+        env:
+          RELEASE_REF: ${{ github.ref }}
+        run: test "$RELEASE_REF" = refs/heads/main
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          java-version: '21'
+          distribution: temurin
+          cache: maven
+      - uses: jbangdev/setup-jbang@cc28889678db839e29433f42f9ff25f148b6d8de # main
+      - name: Plan the release
+        id: plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ inputs.version }}
+        run: bash .github/release/release.sh plan
+      - name: Verify the selected commit
+        run: ./mvnw --batch-mode --no-transfer-progress clean verify
+      - name: Check that verification preserved tracked source
+        run: git diff --exit-code
+      - name: Write release summary
+        env:
+          TAG: ${{ steps.plan.outputs.tag }}
+          PRERELEASE: ${{ steps.plan.outputs.prerelease }}
+          LATEST: ${{ steps.plan.outputs.latest }}
+          ADVANCE_MAJOR: ${{ steps.plan.outputs.advance_major }}
+          MAJOR: ${{ steps.plan.outputs.major }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          {
+            printf '## Release plan\n\n'
+            printf 'Tag: `%s`\n\nCommit: `%s`\n\n' "$TAG" "$GITHUB_SHA"
+            printf 'Prerelease: %s\n\nLatest: %s\n\n' "$PRERELEASE" "$LATEST"
+            printf 'Advance `%s`: %s\n\nDry run: %s\n' "$MAJOR" "$ADVANCE_MAJOR" "$DRY_RUN"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload verification results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: release-verification
+          path: |
+            target/surefire-reports/
+            target/failsafe-reports/
+  publish:
+    needs: verify
+    if: ${{ !inputs.dry_run }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          java-version: '21'
+          distribution: temurin
+      - name: Publish the tested commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ inputs.version }}
+        run: bash .github/release/release.sh publish

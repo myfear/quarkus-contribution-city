@@ -1,5 +1,9 @@
 name: Quarkus Contribution City
 description: Render a GitHub contribution calendar as a deterministic ASCII-style SVG city
+author: Markus Eisele
+branding:
+  icon: activity
+  color: green
 inputs:
   github-token:
     description: GitHub token for the contribution calendar

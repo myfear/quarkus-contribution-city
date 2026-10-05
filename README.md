@@ -24,7 +24,7 @@ Install JDK 21, [JBang](https://www.jbang.dev/download/), Git, and Bash. Run fro
 ./mvnw verify
 ```
 
-All 56 tests run with Java, including the packaged application through Java and JBang and the publisher against a temporary Git repository. Saved calendar data and local HTTP servers supply the test responses. Preview images are written to `target/previews/`.
+The tests run with Java, including the packaged application through Java and JBang, image publishing, and release behavior against temporary Git repositories. Saved calendar data and local HTTP servers supply the test responses. Preview images are written to `target/previews/`.
 
 The project uses Quarkus 3.33.1, Quarkus GitHub Action 2.10.0, and platform-managed JUnit 6.0.3.
 
@@ -71,3 +71,11 @@ Embed the image published by this repository in a README:
 ```
 
 SVG generation uses local font fallbacks, so character shapes can vary between viewers. The windows repeat each week's returned day pattern; use calendar counts for exact comparisons.
+
+## Releases
+
+The [Release action workflow](https://github.com/myfear/quarkus-contribution-city/actions/workflows/release.yml) verifies a selected commit on `main` before publishing. A dry run is selected by default. See the [release guide](RELEASING.md) for version selection, publishing, and GitHub Marketplace setup.
+
+Release tags use `vMAJOR.MINOR.PATCH`, for example `v1.0.0`. Preview versions add a suffix such as `v1.1.0-beta.1`. Each full version tag stays on its original commit. Stable releases also maintain a major tag such as `v1`, which tracks the newest stable release in that major version. Prereleases keep their full version tag.
+
+The examples use `main` while the first release is being prepared. After a stable release is published, consumers can use its major tag for compatible updates or pin the full commit SHA for an exact revision.
