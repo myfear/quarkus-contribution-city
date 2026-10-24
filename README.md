@@ -26,7 +26,7 @@ Install JDK 21, [JBang](https://www.jbang.dev/download/), Git, and Bash. Run fro
 
 The tests run with Java, including the packaged application through Java and JBang, image publishing, and release behavior against temporary Git repositories. Saved calendar data and local HTTP servers supply the test responses. Preview images are written to `target/previews/`.
 
-The project uses Quarkus 3.33.1, Quarkus GitHub Action 2.10.0, and platform-managed JUnit 6.0.3.
+The project uses Quarkus 3.40.1, Quarkus GitHub Action 2.10.0, and platform-managed JUnit 6.1.3.
 
 ## Generate a city
 
