@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1092" height="384" viewBox="0 0 1092 384" role="img" aria-labelledby="title desc">
-<title id="title">GitHub contribution city for @myfear: 565 contributions</title>
+<title id="title">GitHub contribution city for @myfear: 574 contributions</title>
 <desc id="desc">Oldest weeks are on the left. Building height uses logarithmic weekly activity. Windows repeat each week's returned days, colored by contribution level. The antenna marks the most recent highest active week. The header total covers the full calendar returned by GitHub.</desc>
 <rect width="100%" height="100%" fill="#0d1117"/>
 <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="13" fill="#c9d1d9">
 <text x="16" y="22">@myfear</text>
-<text x="16" y="40">565 contributions</text>
+<text x="16" y="40">574 contributions</text>
 </g>
 <rect x="97" y="84" width="18" height="252" fill="#161b22"/>
 <rect x="1037" y="102" width="18" height="234" fill="#1c2128"/>
@@ -36,6 +36,7 @@
 <rect x="677" y="192" width="18" height="144" fill="#1c2128"/>
 <rect x="757" y="192" width="18" height="144" fill="#1c2128"/>
 <rect x="937" y="192" width="18" height="144" fill="#161b22"/>
+<rect x="1057" y="192" width="18" height="144" fill="#161b22"/>
 <rect x="397" y="210" width="18" height="126" fill="#1c2128"/>
 <rect x="437" y="210" width="18" height="126" fill="#1c2128"/>
 <rect x="777" y="210" width="18" height="126" fill="#161b22"/>
@@ -58,7 +59,6 @@
 <rect x="477" y="318" width="18" height="18" fill="#1c2128"/>
 <rect x="517" y="318" width="18" height="18" fill="#1c2128"/>
 <rect x="837" y="318" width="18" height="18" fill="#1c2128"/>
-<rect x="1057" y="318" width="18" height="18" fill="#161b22"/>
 <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="15" text-anchor="middle">
 <text x="101" y="62" fill="#8b949e">╻</text>
 <text x="101 111" y="80" fill="#8b949e">▁▁</text>
@@ -173,6 +173,7 @@
 <text x="1001 1011" y="188" fill="#484f58">··</text>
 <text x="1041" y="188" fill="#39d353">▪</text>
 <text x="1051" y="188" fill="#0e4429">▪</text>
+<text x="1061 1071" y="188" fill="#8b949e">▁▁</text>
 <text x="21" y="206" fill="#26a641">▪</text>
 <text x="31" y="206" fill="#484f58">·</text>
 <text x="61" y="206" fill="#484f58">·</text>
@@ -230,6 +231,7 @@
 <text x="1021 1031" y="206" fill="#8b949e">▁▁</text>
 <text x="1041" y="206" fill="#39d353">▪</text>
 <text x="1051" y="206" fill="#006d32">▪</text>
+<text x="1061 1071" y="206" fill="#484f58">··</text>
 <text x="21" y="224" fill="#484f58">·</text>
 <text x="31" y="224" fill="#0e4429">▪</text>
 <text x="61" y="224" fill="#0e4429">▪</text>
@@ -284,6 +286,8 @@
 <text x="1031" y="224" fill="#0e4429">▪</text>
 <text x="1041" y="224" fill="#006d32">▪</text>
 <text x="1051" y="224" fill="#39d353">▪</text>
+<text x="1061" y="224" fill="#484f58">·</text>
+<text x="1071" y="224" fill="#39d353">▪</text>
 <text x="21 31" y="242" fill="#484f58">··</text>
 <text x="61" y="242" fill="#0e4429">▪</text>
 <text x="71" y="242" fill="#484f58">·</text>
@@ -339,6 +343,8 @@
 <text x="991" y="242" fill="#39d353">▪</text>
 <text x="1001" y="242" fill="#484f58">·</text>
 <text x="1011 1021 1031 1041 1051" y="242" fill="#0e4429">▪▪▪▪▪</text>
+<text x="1061" y="242" fill="#39d353">▪</text>
+<text x="1071" y="242" fill="#484f58">·</text>
 <text x="21" y="260" fill="#484f58">·</text>
 <text x="31" y="260" fill="#0e4429">▪</text>
 <text x="61" y="260" fill="#006d32">▪</text>
@@ -403,6 +409,7 @@
 <text x="1031" y="260" fill="#0e4429">▪</text>
 <text x="1041" y="260" fill="#006d32">▪</text>
 <text x="1051" y="260" fill="#39d353">▪</text>
+<text x="1061 1071" y="260" fill="#484f58">··</text>
 <text x="21" y="278" fill="#0e4429">▪</text>
 <text x="31" y="278" fill="#26a641">▪</text>
 <text x="61" y="278" fill="#006d32">▪</text>
@@ -469,6 +476,8 @@
 <text x="1021" y="278" fill="#0e4429">▪</text>
 <text x="1031" y="278" fill="#484f58">·</text>
 <text x="1041 1051" y="278" fill="#39d353">▪▪</text>
+<text x="1061" y="278" fill="#484f58">·</text>
+<text x="1071" y="278" fill="#39d353">▪</text>
 <text x="21 31" y="296" fill="#484f58">··</text>
 <text x="61" y="296" fill="#484f58">·</text>
 <text x="71" y="296" fill="#0e4429">▪</text>
@@ -532,6 +541,8 @@
 <text x="1031" y="296" fill="#484f58">·</text>
 <text x="1041" y="296" fill="#0e4429">▪</text>
 <text x="1051" y="296" fill="#006d32">▪</text>
+<text x="1061" y="296" fill="#39d353">▪</text>
+<text x="1071" y="296" fill="#484f58">·</text>
 <text x="21" y="314" fill="#0e4429">▪</text>
 <text x="31" y="314" fill="#484f58">·</text>
 <text x="41 51" y="314" fill="#8b949e">▁▁</text>
@@ -602,7 +613,7 @@
 <text x="1021 1031" y="314" fill="#0e4429">▪▪</text>
 <text x="1041" y="314" fill="#39d353">▪</text>
 <text x="1051" y="314" fill="#0e4429">▪</text>
-<text x="1061 1071" y="314" fill="#8b949e">▁▁</text>
+<text x="1061 1071" y="314" fill="#484f58">··</text>
 <text x="21" y="332" fill="#26a641">▪</text>
 <text x="31 41 51 61" y="332" fill="#484f58">····</text>
 <text x="71 81" y="332" fill="#006d32">▪▪</text>
@@ -665,7 +676,8 @@
 <text x="1021 1031" y="332" fill="#484f58">··</text>
 <text x="1041" y="332" fill="#39d353">▪</text>
 <text x="1051" y="332" fill="#006d32">▪</text>
-<text x="1061 1071" y="332" fill="#484f58">··</text>
+<text x="1061" y="332" fill="#484f58">·</text>
+<text x="1071" y="332" fill="#39d353">▪</text>
 <text x="21 31 41 51 61 71 81 91 101 111 121 131 141 151 161 171 181 191 201 211 221 231 241 251 261 271 281 291 301 311 321 331 341 351 361 371 381 391 401 411 421 431 441 451 461 471 481 491 501 511 521 531 541 551 561 571 581 591 601 611 621 631 641 651 661 671 681 691 701 711 721 731 741 751 761 771 781 791 801 811 821 831 841 851 861 871 881 891 901 911 921 931 941 951 961 971 981 991 1001 1011 1021 1031 1041 1051 1061 1071" y="350" fill="#6e7681">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</text>
 <text x="21 31 41" y="368" fill="#c9d1d9">Oct</text>
 <text x="141 151 161" y="368" fill="#c9d1d9">Dec</text>
