@@ -330,8 +330,8 @@
 <text x="1021 1031" y="242" fill="#484f58">··</text>
 <text x="1041" y="242" fill="#006d32">▪</text>
 <text x="1051" y="242" fill="#26a641">▪</text>
-<text x="1061" y="242" fill="#484f58">·</text>
-<text x="1071" y="242" fill="#006d32">▪</text>
+<text x="1061" y="242" fill="#006d32">▪</text>
+<text x="1071" y="242" fill="#484f58">·</text>
 <text x="21 31" y="260" fill="#0e4429">▪▪</text>
 <text x="41 51" y="260" fill="#39d353">▪▪</text>
 <text x="61 71" y="260" fill="#0e4429">▪▪</text>
@@ -391,8 +391,7 @@
 <text x="1021" y="260" fill="#0e4429">▪</text>
 <text x="1031 1041" y="260" fill="#484f58">··</text>
 <text x="1051" y="260" fill="#0e4429">▪</text>
-<text x="1061" y="260" fill="#484f58">·</text>
-<text x="1071" y="260" fill="#006d32">▪</text>
+<text x="1061 1071" y="260" fill="#484f58">··</text>
 <text x="21" y="278" fill="#484f58">·</text>
 <text x="31 41" y="278" fill="#0e4429">▪▪</text>
 <text x="51" y="278" fill="#484f58">·</text>
@@ -517,8 +516,9 @@
 <text x="1011 1021" y="296" fill="#484f58">··</text>
 <text x="1031" y="296" fill="#0e4429">▪</text>
 <text x="1041" y="296" fill="#26a641">▪</text>
-<text x="1051 1061" y="296" fill="#484f58">··</text>
-<text x="1071" y="296" fill="#006d32">▪</text>
+<text x="1051" y="296" fill="#484f58">·</text>
+<text x="1061" y="296" fill="#006d32">▪</text>
+<text x="1071" y="296" fill="#484f58">·</text>
 <text x="21" y="314" fill="#0e4429">▪</text>
 <text x="31" y="314" fill="#006d32">▪</text>
 <text x="41" y="314" fill="#39d353">▪</text>
@@ -584,8 +584,7 @@
 <text x="1001 1011 1021 1031" y="314" fill="#484f58">····</text>
 <text x="1041" y="314" fill="#0e4429">▪</text>
 <text x="1051" y="314" fill="#006d32">▪</text>
-<text x="1061" y="314" fill="#484f58">·</text>
-<text x="1071" y="314" fill="#006d32">▪</text>
+<text x="1061 1071" y="314" fill="#484f58">··</text>
 <text x="21 31" y="332" fill="#0e4429">▪▪</text>
 <text x="41" y="332" fill="#484f58">·</text>
 <text x="51" y="332" fill="#39d353">▪</text>
